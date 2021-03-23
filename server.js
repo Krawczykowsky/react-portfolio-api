@@ -6,6 +6,7 @@ const homeRouter = require('./routes/home')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 require('dotenv/config')
+const port = process.env.PORT || 3000
 
 
 // Middleware
@@ -32,4 +33,4 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedT
 })
 
 
-app.listen(3000)
+app.listen(port)
