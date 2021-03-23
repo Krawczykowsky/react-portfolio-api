@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose')
 const app = express();
 const postsRoute = require('./routes/post')
+const homeRouter = require('./routes/home')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 require('dotenv/config')
@@ -12,7 +13,12 @@ app.use(cors())
 app.use(bodyParser.json())
 
 //Import routes
-app.use('/posts',postsRoute)
+// app.use('/',()=>{
+//     res.json(console.log("test"))
+    
+// })
+app.use('/', homeRouter)
+app.use('/posts', postsRoute)
 
 
 
